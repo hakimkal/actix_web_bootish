@@ -6,3 +6,6 @@
 
 ## Initiate Sql migration folder
  ```cargo sqlx migrate add init```
+### commands
+1. ``` cargo build```
+2. ``` cargo run ```
