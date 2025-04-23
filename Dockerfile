@@ -62,13 +62,13 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy the compiled binary from the builder stage
-COPY --from=builder /usr/src/app/target/release/paydestalpos /app/paydestalpos
+COPY --from=builder /usr/src/app/target/release/actix_web_boot_app /app/actix_web_boot_app
 
 # Set execute permissions
-RUN chmod +x /app/bootish
+RUN chmod +x /app/actix_web_boot_app
 
 # Set bash as the default shell
 SHELL ["/bin/bash", "-c"]
 
 # Set the entrypoint
-CMD ["/app/bootish"]
+CMD ["/app/actix_web_boot_app"]
